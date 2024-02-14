@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  /* height: 100vh; */
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+hr {
+  margin: 20px 0;
+}
+.mainContainer {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "sidebar header"
+    "sidebar contentSection"
+    "sidebar contentSection"
+    "sidebar contentSection"
+    "sidebar contentSection";
+}
+
+.sideBar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  background-color: #1992d4;
+  padding: 20px;
+}
+.header {
+  grid-area: header;
+  padding: 20px 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "search account" "acc-data acc-btns";
+  row-gap: 20px;
+  box-shadow: 0px 10px 10px -3px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.content {
+  grid-area: contentSection;
+  background-color: #e2e8f0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "projects projects projects announcements"
+    "projects projects projects trending";
+  padding: 30px 20px;
+  gap: 20px;
+}
+.menuItems,
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 0 10px;
+}
+.menuItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  fill: white;
+  cursor: pointer;
+}
+.brand {
+  font-size: 2rem;
+  gap: 15px;
+}
+.search {
+  grid-area: search;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.3rem;
+}
+#search {
+  width: 100%;
+  background-color: #e2e8f0;
+  border: #e2e8f0 solid 2px;
+  border-radius: 50px;
+  height: 40px;
+  padding: 0 20px;
+}
+#search:focus {
+  outline: none;
+}
+.account {
+  grid-area: account;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.3rem;
+}
+.userIcon {
+  height: 50px;
+  border-radius: 50%;
+  /* border: #e2e8f0 solid 2px; */
+}
+.userName {
+  font-weight: 600;
+}
+.welcome {
+  grid-area: acc-data;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.welcomeUserIcon {
+  height: 70px;
+  border-radius: 50%;
+}
+.welcomeMsg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  font-weight: 600;
+}
+.welcomeName {
+  font-size: 1.5rem;
+}
+.accBtns {
+  grid-area: acc-btns;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
+.acc-Btns {
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: #1992d4;
+  color: white;
+  border: #1992d4 solid 2px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.projects {
+  grid-area: projects;
+  display: flex;
+  flex-direction: column;
+}
+.announcements {
+  grid-area: announcements;
+}
+.trending {
+  grid-area: trending;
+}
+.sectionTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+.projectCards {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+  padding-top: 20px;
+  gap: 20px;
+}
+.projectCard {
+  /* height: 200px; */
+  background-color: white;
+  padding: 30px 30px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  border-left: orange 10px solid;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.cardContent {
+  color: grey;
+}
+.cardIcons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.announceItems,
+.trendingItems {
+  background-color: white;
+  padding: 30px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px -3px rgba(0, 0, 0, 0.1);
+}
+.announceItem {
+  font-size: 1rem;
+}
+.announceTitle {
+  font-weight: 600;
+}
+.announceContent {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  color: grey;
+}
+.trendingItems {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.trendingIcon {
+  height: 50px;
+  border-radius: 50%;
+}
+.trendingItem {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.trendingMsg {
+  color: grey;
+  margin-top: 3px;
+}
